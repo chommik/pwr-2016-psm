@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="titles">
+        <item>item1</item>
+        <item>item2</item>
+        <item>item3</item>
+        <item>item4</item>
+        <item>item5</item>
+        <item>item6</item>
+        <item>item7</item>
+        <item>item8</item>
+        <item>item9</item>
+        <item>item10</item>
+        <item>item11</item>
+        <item>item12</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>text1</item>
+        <item>text2</item>
+        <item>text3</item>
+        <item>text4</item>
+        <item>text5</item>
+        <item>text6</item>
+        <item>text7</item>
+        <item>text8</item>
+        <item>text9</item>
+        <item>text10</item>
+        <item>text11</item>
+        <item>text12</item>
+    </string-array>
+
+    <array name="pics">
+        <item>@drawable/abyssinian</item>
+        <item>@drawable/british</item>
+        <item>@drawable/charteux</item>
+        <item>@drawable/cyprus</item>
+        <item>@drawable/european</item>
+        <item>@drawable/norwegian</item>
+        <item>@drawable/ocicat</item>
+        <item>@drawable/persian</item>
+        <item>@drawable/ragdoll</item>
+        <item>@drawable/russian</item>
+        <item>@drawable/bengal</item>
+        <item>@drawable/sphinx</item>
+    </array>
+</resources>
