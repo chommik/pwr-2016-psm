@@ -2,7 +2,9 @@ package pl.chom.lab1;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +17,10 @@ import java.util.List;
 public class ItemAdapter extends ArrayAdapter<Item> {
 
     private Context context;
-    private final List<Item> objects;
 
     public ItemAdapter(Context context, int resource, List<Item> objects) {
         super(context, resource, objects);
         this.context = context;
-        this.objects = objects;
     }
 
     @Override
@@ -37,6 +37,11 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 
         itemTitle.setText(thisItem.title);
         itemDescription.setText(thisItem.description);
+
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(context.getResources(), thisItem.drawableId, options);
+
         itemImage.setImageResource(thisItem.drawableId);
 
         convertView.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +49,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
             public void onClick(View v) {
                 Intent detailIntent = new Intent(getContext(), DetailActivity.class);
                 detailIntent.putExtra("itemId", thisItem.itemId);
+                detailIntent.putExtra("imagesArrayId", thisItem.imagesArrayId);
                 context.startActivity(detailIntent);
             }
         });

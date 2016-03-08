@@ -31,17 +31,49 @@
     </string-array>
 
     <array name="pics">
-        <item>@drawable/abyssinian</item>
-        <item>@drawable/british</item>
-        <item>@drawable/charteux</item>
-        <item>@drawable/cyprus</item>
-        <item>@drawable/european</item>
-        <item>@drawable/norwegian</item>
-        <item>@drawable/ocicat</item>
-        <item>@drawable/persian</item>
-        <item>@drawable/ragdoll</item>
-        <item>@drawable/russian</item>
-        <item>@drawable/bengal</item>
-        <item>@drawable/sphinx</item>
+        <item>@array/pics1</item>
+        <item>@array/pics2</item>
+        <item>@array/pics3</item>
+        <item>@array/pics4</item>
+        <item>@array/pics5</item>
+        <item>@array/pics6</item>
+        <item>@array/pics7</item>
+        <item>@array/pics8</item>
     </array>
+
+    <array name="pics1">
+        <item>@drawable/abyssinian</item>
+        <item>@drawable/ragdoll</item>
+        <item>@drawable/british</item>
+    </array>
+    <array name="pics2">
+        <item>@drawable/british</item>
+        <item>@drawable/cat1</item>
+        <item>@drawable/cat2</item>
+    </array>
+    <array name="pics3">
+        <item>@drawable/charteux</item>
+        <item>@drawable/cat3</item>
+    </array>
+    <array name="pics4">
+        <item>@drawable/cyprus</item>
+        <item>@drawable/cat4</item>
+        <item>@drawable/cat5</item>
+    </array>
+    <array name="pics5">
+        <item>@drawable/european</item>
+        <item>@drawable/cat6</item>
+        <item>@drawable/cat7</item>
+        <item>@drawable/cat8</item>
+    </array>
+    <array name="pics6">
+        <item>@drawable/norwegian</item>
+    </array>
+    <array name="pics7">
+        <item>@drawable/ocicat</item>
+    </array>
+    <array name="pics8">
+        <item>@drawable/persian</item>
+    </array>
+
 </resources>

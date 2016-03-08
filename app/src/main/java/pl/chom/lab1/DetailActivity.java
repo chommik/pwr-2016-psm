@@ -2,10 +2,15 @@ package pl.chom.lab1;
 
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class DetailActivity extends AppCompatActivity {
     @Override
@@ -14,6 +19,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         Bundle bundle = getIntent().getExtras();
+        int imagesArrayId = bundle.getInt("imagesArrayId");
         int itemId = bundle.getInt("itemId");
 
         Resources res = getResources();
@@ -23,7 +29,18 @@ public class DetailActivity extends AppCompatActivity {
 
         setTitle(titles[itemId]);
         ((TextView)findViewById(R.id.detailDescription)).setText(descriptions[itemId]);
-        ((ImageView)findViewById(R.id.detailImage)).setImageResource(images.getResourceId(itemId, -1));
+
+        TypedArray typedArray = res.obtainTypedArray(imagesArrayId);
+
+        ArrayList<Integer> resourceArray = new ArrayList<>();
+        for (int i = 0; i < typedArray.length(); i++)
+        {
+            resourceArray.add(typedArray.getResourceId(i, -1));
+        }
+        typedArray.recycle();
+
+        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
+        pager.setAdapter(new PhotoFragmentAdapter(getSupportFragmentManager(), resourceArray));
 
         images.recycle();
     }

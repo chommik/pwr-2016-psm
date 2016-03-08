@@ -20,10 +20,14 @@ public class MainActivity extends AppCompatActivity {
         Resources res = getResources();
         String[] titles = res.getStringArray(R.array.titles);
         String[] descriptions = res.getStringArray(R.array.descriptions);
-        TypedArray images = res.obtainTypedArray(R.array.pics);
+        TypedArray imagesLists = res.obtainTypedArray(R.array.pics);
+
         List<Item> items = new ArrayList<>();
-        for (int i = 0; i < 11; i++) {
-            items.add(new Item(i, titles[i], descriptions[i], images.getResourceId(i, -1)));
+        for (int i = 0; i < imagesLists.length(); i++) {
+            int imagesArrayId = imagesLists.getResourceId(i, -1);
+            TypedArray theList = res.obtainTypedArray(imagesArrayId);
+            items.add(new Item(i, titles[i], descriptions[i], theList.getResourceId(0, -1), imagesArrayId));
+            theList.recycle();
         }
 
         ArrayAdapter<Item> adapter = new ItemAdapter(this, R.layout.item_single, items);
@@ -31,6 +35,6 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.itemList);
         listView.setAdapter(adapter);
 
-        images.recycle();
+        imagesLists.recycle();
     }
 }
