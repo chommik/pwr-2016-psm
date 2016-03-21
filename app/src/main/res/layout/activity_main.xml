@@ -9,11 +9,44 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="pl.chom.lab1.MainActivity">
 
-    <ListView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/itemList"
-        android:layout_alignParentTop="true"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:id="@+id/buttonContainer"
+        android:layout_above="@+id/nextButton"
+        android:layout_below="@+id/textTitle">
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dalej"
+        android:id="@+id/nextButton"
+        android:layout_gravity="right"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/buttonContainer"
+        android:layout_alignEnd="@+id/buttonContainer"
+        android:enabled="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textTitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Koniec."
+        android:id="@+id/textEnd"
+        android:layout_alignBottom="@+id/nextButton"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
 </RelativeLayout>
